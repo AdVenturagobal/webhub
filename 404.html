@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 // CONNECTION LOST</title>
+    <!-- A generic, self-contained icon for easy use -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+    <style>
+        /* Import a monospaced font for the terminal feel */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+        :root {
+            /* --- You can easily customize the color theme here --- */
+            --bg-color: #000000;
+            --font-color: #00ff41; /* Matrix rain and main text color */
+            --glow-color-1: #ff00c1; /* Glow color 1 (pink) */
+            --glow-color-2: #00f6ff; /* Glow color 2 (cyan) */
+            --terminal-bg: rgba(10, 10, 10, 0.85); /* Terminal window background color */
+            --terminal-border: #333;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: var(--bg-color);
+            color: var(--font-color);
+            font-family: 'Roboto Mono', 'Menlo', 'Monaco', monospace;
+        }
+
+        /* --- Background & Filters --- */
+        #matrix-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 1;
+        }
+
+        .scanline {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 2;
+            background: linear-gradient(to bottom, rgba(20, 20, 20, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+            background-size: 100% 4px;
+            animation: scan 10s linear infinite;
+        }
+        @keyframes scan {
+            from { background-position-y: 0px; }
+            to { background-position-y: 40px; }
+        }
+
+        /* --- Terminal Window Style --- */
+        .terminal-window {
+            position: relative;
+            z-index: 3;
+            width: 90%;
+            max-width: 700px;
+            background: var(--terminal-bg);
+            border: 1px solid var(--terminal-border);
+            border-radius: 8px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        .terminal-header {
+            background: #333;
+            padding: 8px;
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+            display: flex;
+            align-items: center;
+        }
+        .terminal-header .btn {
+            width: 12px; height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        .btn.red { background: #ff5f56; }
+        .btn.yellow { background: #ffbd2e; }
+        .btn.green { background: #27c93f; }
+
+        /* --- Content Container --- */
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .terminal-body {
+            padding: 30px;
+        }
+        
+        /* --- Glitchy "404" Text --- */
+        .glitch {
+            font-size: 8rem;
+            font-weight: 700;
+            position: relative;
+            animation: glitch-anim 2.5s infinite steps(1);
+            color: white;
+            text-shadow: 0 0 5px var(--glow-color-1), 0 0 10px var(--glow-color-1), 0 0 20px var(--glow-color-1), 0 0 40px var(--glow-color-2), 0 0 80px var(--glow-color-2);
+        }
+        .glitch:before, .glitch:after {
+            content: attr(data-text);
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--terminal-bg);
+            overflow: hidden;
+        }
+        .glitch:before {
+            left: 2px;
+            text-shadow: -2px 0 var(--glow-color-1);
+            animation: glitch-anim-1 2s infinite linear reverse;
+        }
+        .glitch:after {
+            left: -2px;
+            text-shadow: -2px 0 var(--glow-color-2);
+            animation: glitch-anim-2 2s infinite linear reverse;
+        }
+        @keyframes glitch-anim { 0% { clip-path: inset(89% 0 1% 0); } 10% { clip-path: inset(5% 0 40% 0); } 20% { clip-path: inset(99% 0 1% 0); } 30% { clip-path: inset(75% 0 5% 0); } 40% { clip-path: inset(10% 0 80% 0); } 50% { clip-path: inset(45% 0 45% 0); } 60% { clip-path: inset(80% 0 5% 0); } 70% { clip-path: inset(20% 0 70% 0); } 80% { clip-path: inset(95% 0 2% 0); } 90% { clip-path: inset(60% 0 30% 0); } 100% { clip-path: inset(89% 0 1% 0); } }
+        @keyframes glitch-anim-1 { 0% { clip-path: inset(30% 0 60% 0); } 100% { clip-path: inset(45% 0 45% 0); } }
+        @keyframes glitch-anim-2 { 0% { clip-path: inset(75% 0 5% 0); } 100% { clip-path: inset(10% 0 80% 0); } }
+
+        /* --- Typewriter Message --- */
+        #message {
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            line-height: 1.6;
+            margin: 20px 0;
+            text-shadow: 0 0 5px var(--font-color);
+        }
+        #message .cursor {
+            display: inline-block;
+            width: 10px; height: 1.2rem;
+            background: var(--font-color);
+            box-shadow: 0 0 5px var(--font-color);
+            animation: blink 1s steps(2, start) infinite;
+        }
+        @keyframes blink { to { visibility: hidden; } }
+
+        /* --- Display-Only Button Group --- */
+        .button-group {
+            margin-top: 30px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .btn-display {
+            padding: 10px 20px;
+            border: 2px solid var(--glow-color-2);
+            color: var(--glow-color-2);
+            font-size: 1rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 0 0 5px var(--glow-color-2);
+            box-shadow: 0 0 10px var(--glow-color-2) inset, 0 0 5px var(--glow-color-2);
+            cursor: default; /* Change cursor to default arrow */
+        }
+        
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .glitch { font-size: 6rem; }
+            #message { font-size: 1rem; }
+            .btn-display { font-size: 0.9rem; padding: 8px 16px; }
+            .terminal-body { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="matrix-bg"></canvas>
+    <div class="scanline"></div>
+
+    <div class="container">
+        <div class="terminal-window">
+            <header class="terminal-header">
+                <div class="btn red"></div>
+                <div class="btn yellow"></div>
+                <div class="btn green"></div>
+            </header>
+            <div class="terminal-body">
+                <h1 class="glitch" data-text="404">404</h1>
+                <!-- English text for the typewriter effect -->
+                <p id="message-content" style="display: none;">CRITICAL ERROR: Connection to requested node lost...<br>Signal corrupted. Path not found. Emergency protocol initiated.</p>
+                <p id="message"></p>
+                <div class="button-group">
+                    <!-- Changed from <a> to <div> and updated class -->
+                    <div class="btn-display">GO BACK</div>
+                    <div class="btn-display">SYSTEM CORE</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- 1. Dynamic Matrix Background (Performance Optimized) ---
+        const canvas = document.getElementById('matrix-bg');
+        const ctx = canvas.getContext('2d');
+        const alphabet = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッンABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        const fontSize = 16;
+        let columns, rainDrops;
+
+        function initializeMatrix() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            columns = canvas.width / fontSize;
+            rainDrops = [];
+            for (let x = 0; x < columns; x++) {
+                rainDrops[x] = 1;
+            }
+        }
+
+        function drawMatrix() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--font-color').trim();
+            ctx.font = fontSize + 'px monospace';
+            for (let i = 0; i < rainDrops.length; i++) {
+                const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+                ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
+                if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    rainDrops[i] = 0;
+                }
+                rainDrops[i]++;
+            }
+        }
+
+        function animate() {
+            drawMatrix();
+            requestAnimationFrame(animate);
+        }
+
+        // --- 2. Typewriter Effect ---
+        const messageEl = document.getElementById('message');
+        const textToType = document.getElementById('message-content').innerHTML; 
+        let index = 0;
+
+        function typeWriter() {
+            if (index < textToType.length) {
+                if (textToType.substring(index, index + 4) === '<br>') {
+                    messageEl.innerHTML += '<br>';
+                    index += 4;
+                } else {
+                    messageEl.innerHTML = textToType.substring(0, index + 1) + '<span class="cursor"></span>';
+                    index++;
+                }
+                setTimeout(typeWriter, Math.random() * 100 + 50);
+            } else {
+                messageEl.querySelector('.cursor').style.animation = 'blink 1s steps(2, start) infinite';
+            }
+        }
+
+        // --- 3. Event Listeners & Initialization ---
+        window.addEventListener('resize', initializeMatrix);
+        initializeMatrix();
+        animate();
+        setTimeout(typeWriter, 1000);
+    </script>
+</body>
+</html>
