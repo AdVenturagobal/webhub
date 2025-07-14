@@ -1,26 +1,27 @@
-// 这是“Plan B”的 _middleware.js 代码，逻辑更直接
-export default function middleware(request) {
-  // 只处理对根路径'/'的请求
-  if (request.nextUrl.pathname !== '/') {
-    return; // 如果不是根路径，什么都不做
-  }
+export const config = {
+  // 这个匹配器确保此中间件只在用户访问根路径 ("/") 时运行
+  matcher: '/', 
+};
 
+export default function middleware(request) {
+  // 从请求头中安全地获取用户浏览器的语言偏好
   const acceptLanguage = request.headers.get('accept-language') || 'en';
   const preferredLang = acceptLanguage.split(',')[0].toLowerCase();
   
-  let destinationPath = '/en'; // 默认路径
+  // 默认跳转到英语页面
+  let destination = '/en'; 
 
   if (preferredLang.startsWith('zh')) {
-    destinationPath = '/cn';
+    destination = '/cn';
   } else if (preferredLang.startsWith('es')) {
-    destinationPath = '/es';
+    destination = '/es';
   } else if (preferredLang.startsWith('pt')) {
-    destinationPath = '/pt';
+    destination = '/pt';
   }
   
-  // 直接构建一个全新的、完整的URL对象
-  const redirectUrl = new URL(destinationPath, request.url);
+  // 构建一个全新的、完整的跳转目标URL
+  const redirectUrl = new URL(destination, request.url);
 
-  // 返回一个307临时重定向响应
-  return Response.redirect(redirectUrl);
+  // 返回一个307临时重定向响应，这对SEO友好
+  return Response.redirect(redirectUrl, 307);
 }
