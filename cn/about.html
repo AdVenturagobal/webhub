@@ -5,22 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>关于我们 - 你的数字世界门户</title>
+    <meta name="description" content="了解WebHub，探索我们作为数字世界优质平台导航站的使命与价值。金融、体育、游戏、AI、娱乐一站式入口。">
+    <meta name="keywords" content="关于WebHub, 数字世界, 平台导航, 使命, 价值观, 金融, 体育, 游戏, AI, 娱乐">
+    <!-- Open Graph -->
+    <meta property="og:title" content="关于我们 - WebHub" />
+    <meta property="og:description" content="了解WebHub，探索我们作为数字世界优质平台导航站的使命与价值。金融、体育、游戏、AI、娱乐一站式入口。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.webawesome.cc/cn/about.html" />
+    <meta property="og:image" content="https://www.webawesome.cc/assets/images/logo@2x.png" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="关于我们 - WebHub" />
+    <meta name="twitter:description" content="了解WebHub，探索我们作为数字世界优质平台导航站的使命与价值。金融、体育、游戏、AI、娱乐一站式入口。" />
+    <meta name="twitter:image" content="https://www.webawesome.cc/assets/images/logo@2x.png" />
+    <!-- hreflang 多语言声明 -->
+    <link rel="alternate" hreflang="en" href="https://www.webawesome.cc/en/about.html" />
+    <link rel="alternate" hreflang="zh" href="https://www.webawesome.cc/cn/about.html" />
+    <link rel="alternate" hreflang="es" href="https://www.webawesome.cc/es/about.html" />
+    <link rel="alternate" hreflang="pt" href="https://www.webawesome.cc/pt/about.html" />
 
     <link rel="shortcut icon" href="/assets/images/favicon.png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arimo:400,700,400italic">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Arimo:400,700,400italic">
     <link rel="stylesheet" href="/assets/css/fonts/linecons/css/linecons.css">
     <link rel="stylesheet" href="/assets/css/fonts/fontawesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/assets/css/bootstrap.css">
-    <link rel="stylesheet" href="/assets/css/xenon-core.css">
-    <link rel="stylesheet" href="/assets/css/xenon-components.css">
-    <link rel="stylesheet" href="/assets/css/xenon-skins.css">
-    <link rel="stylesheet" href="/assets/css/nav.css">
+    <link rel="stylesheet" href="/assets/css/main.min.css">
     <script src="/assets/js/jquery-1.11.1.min.js"></script>
 </head>
 
 <body class="page-body boxed-container">
-    <div class="page-container">
-        <div class="main-content" style="min-height: 600px;">
+    <div id="header-placeholder"></div>
+    <div class="main-content" style="min-height: 600px;">
             
             <a href="" class="btn btn-default btn-icon-standalone" style="margin-bottom: 20px;">
                 <i class="fa fa-arrow-left"></i>
@@ -72,15 +86,19 @@
                 </div>
             </div>
         </div>
-    </div>
-
+    <div id="footer-placeholder"></div>
+    <script>
+      // 动态加载header和footer
+      function loadFragment(id, url) {
+        fetch(url).then(r => r.text()).then(html => {
+          document.getElementById(id).innerHTML = html;
+        });
+      }
+      loadFragment('header-placeholder', 'header.html');
+      loadFragment('footer-placeholder', 'footer.html');
+    </script>
     <!-- Scripts -->
-    <script src="/assets/js/bootstrap.min.js"></script>
-    <script src="/assets/js/TweenMax.min.js"></script>
-    <script src="/assets/js/resizeable.js"></script>
-    <script src="/assets/js/joinable.js"></script>
-    <script src="/assets/js/xenon-api.js"></script>
-    <script src="/assets/js/xenon-toggles.js"></script>
-    <script src="/assets/js/xenon-custom.js"></script>
+    <script src="/assets/js/main.min.js"></script>
+    <script src="/assets/js/lozad.js"></script>
 </body>
 </html>
