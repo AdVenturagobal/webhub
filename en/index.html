@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+Ï<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -34,27 +34,15 @@
     <title>WebHub - Explore the World's Best, Discover Infinite Possibilities</title>
     <meta name="keywords" content="finance directory, stock market tools, investment resources, trading platforms, sports directory, live scores, sports streaming, fan communities, gaming portal, game deals, esports news, Steam, PlayStation, Xbox, communication apps, team collaboration, remote work tools, AI tools, AI directory, generative AI, ChatGPT, AI art generators, entertainment guide, streaming services, movie database, TV shows, anime streaming, music platforms">
     <meta name="description" content="WebHub - A curated directory of the world's best platforms for finance, sports, gaming, communication, AI, and entertainment. Regularly updated with high-quality bookmarks and resources.">
-    <!-- Open Graph -->
-    <meta property="og:title" content="WebHub - Explore the World's Best, Discover Infinite Possibilities" />
-    <meta property="og:description" content="WebHub - A curated directory of the world's best platforms for finance, sports, gaming, communication, AI, and entertainment. Regularly updated with high-quality bookmarks and resources." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.webawesome.cc/en/index.html" />
-    <meta property="og:image" content="https://www.webawesome.cc/assets/images/logo@2x.png" />
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="WebHub - Explore the World's Best, Discover Infinite Possibilities" />
-    <meta name="twitter:description" content="WebHub - A curated directory of the world's best platforms for finance, sports, gaming, communication, AI, and entertainment. Regularly updated with high-quality bookmarks and resources." />
-    <meta name="twitter:image" content="https://www.webawesome.cc/assets/images/logo@2x.png" />
-    <!-- hreflang 多语言声明 -->
-    <link rel="alternate" hreflang="en" href="https://www.webawesome.cc/en/index.html" />
-    <link rel="alternate" hreflang="zh" href="https://www.webawesome.cc/cn/index.html" />
-    <link rel="alternate" hreflang="es" href="https://www.webawesome.cc/es/index.html" />
-    <link rel="alternate" hreflang="pt" href="https://www.webawesome.cc/pt/index.html" />
     <link rel="shortcut icon" href="/assets/images/favicon.png">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Arimo:400,700,400italic">
     <link rel="stylesheet" href="/assets/css/fonts/linecons/css/linecons.css">
     <link rel="stylesheet" href="/assets/css/fonts/fontawesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/assets/css/main.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/css/xenon-core.css">
+    <link rel="stylesheet" href="/assets/css/xenon-components.css">
+    <link rel="stylesheet" href="/assets/css/xenon-skins.css">
+    <link rel="stylesheet" href="/assets/css/nav.css">
     <script src="/assets/js/jquery-1.11.1.min.js"></script>
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -63,48 +51,123 @@
 </head>
 
 <body class="page-body">
-    <div id="header-placeholder"></div>
-    <div class="main-content">
-        <nav class="navbar user-info-navbar" role="navigation">
-            <ul class="user-info-menu left-links list-inline list-unstyled">
-                <li class="hidden-sm hidden-xs">
-                    <a href="#" data-toggle="sidebar">
-                        <i class="fa-bars"></i>
-                    </a>
+    <!-- skin-white -->
+    <div class="page-container">
+        <div class="sidebar-menu toggle-others fixed">
+            <div class="sidebar-menu-inner">
+                <header class="logo-env">
+                    <!-- logo -->
+                    <div class="logo">
+                        <a href="" class="logo-expanded">
+                            <img src="/assets/images/logo@2x.png" width="100%" alt="WebHub Logo" />
+                        </a>
+                        <a href="" class="logo-collapsed">
+                            <img src="/assets/images/logo-collapsed@2x.png" width="40" alt="WebHub Logo" />
+                        </a>
+                    </div>
+                    <div class="mobile-menu-toggle visible-xs">
+                        <a href="#" data-toggle="user-info-menu">
+                            <i class="linecons-cog"></i>
+                        </a>
+                        <a href="#" data-toggle="mobile-menu">
+                            <i class="fa-bars"></i>
+                        </a>
+                    </div>
+                </header>
+                <ul id="main-menu" class="main-menu">
+                    <li>
+                        <a href="#Recommended" class="smooth">
+                            <i class="linecons-star"></i>
+                            <span class="title">Recommended</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#GamingPlatforms" class="smooth">
+                            <i class="fa-gamepad"></i>
+                            <span class="title">Gaming Platforms</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#CommunicationPlatforms" class="smooth">
+                            <i class="linecons-comment"></i>
+                            <span class="title">Communication Platforms</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#FinancePlatforms" class="smooth">
+                            <i class="linecons-money"></i>
+                            <span class="title">Finance Platforms</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#SportsPlatforms" class="smooth">
+                            <i class="linecons-cup"></i>
+                            <span class="title">Sports Platforms</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#AIPlatforms" class="smooth">
+                            <i class="linecons-lightbulb"></i>
+                            <span class="title">AI Platforms</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#EntertainmentPlatforms" class="smooth">
+                            <i class="linecons-videocam"></i>
+                            <span class="title">Entertainment Platforms</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="about.html">
+                            <i class="linecons-heart"></i>
+                            <span class="tooltip-blue">About</span>
+                            <span class="label label-Primary pull-right hidden-collapsed">♥︎</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-content">
+            <nav class="navbar user-info-navbar" role="navigation">
+                <ul class="user-info-menu left-links list-inline list-unstyled">
+                    <li class="hidden-sm hidden-xs">
+                        <a href="#" data-toggle="sidebar">
+                            <i class="fa-bars"></i>
+                        </a>
 
-                    <!-- Code Update: Language switcher for the English page -->
-    <li class="dropdown hover-line language-switcher">
-        <!-- Top display shows current language: English -->
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <img src="/assets/images/flags/flag-us.png" alt="USA Flag" /> English
-        </a>
-        <ul class="dropdown-menu languages">
-            <!-- English option (set as active) -->
-            <li class="active">
-                <a href="../en/">
-                    <img src="/assets/images/flags/flag-us.png" alt="USA Flag" /> English
-                </a>
-            </li>
-            <!-- Chinese option -->
-            <li>
-                <a href="../cn/">
-                    <img src="/assets/images/flags/flag-cn.png" alt="China Flag" /> 中文
-                </a>
-            </li>
-            <!-- Spanish option -->
-            <li>
-                <a href="../es/">
-                    <img src="/assets/images/flags/flag-es.png" alt="Spain Flag" /> Español
-                </a>
-            </li>
-            <!-- Portuguese option -->
-            <li>
-                <a href="../pt/">
-                    <img src="/assets/images/flags/flag-pt.png" alt="Portugal Flag" /> Português
-                </a>
-            </li>
-        </ul>
-    </li>
+                        <!-- Code Update: Language switcher for the English page -->
+<li class="dropdown hover-line language-switcher">
+    <!-- Top display shows current language: English -->
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <img src="/assets/images/flags/flag-us.png" alt="USA Flag" /> English
+    </a>
+    <ul class="dropdown-menu languages">
+        <!-- English option (set as active) -->
+        <li class="active">
+            <a href="../en/">
+                <img src="/assets/images/flags/flag-us.png" alt="USA Flag" /> English
+            </a>
+        </li>
+        <!-- Chinese option -->
+        <li>
+            <a href="../cn/">
+                <img src="/assets/images/flags/flag-cn.png" alt="China Flag" /> 中文
+            </a>
+        </li>
+        <!-- Spanish option -->
+        <li>
+            <a href="../es/">
+                <img src="/assets/images/flags/flag-es.png" alt="Spain Flag" /> Español
+            </a>
+        </li>
+        <!-- Portuguese option -->
+        <li>
+            <a href="../pt/">
+                <img src="/assets/images/flags/flag-pt.png" alt="Portugal Flag" /> Português
+            </a>
+        </li>
+    </ul>
+</li>
 
 
                 </ul>
@@ -113,21 +176,21 @@
             <!-- Recommended -->
             <h4 class="text-gray"><i class="linecons-tag" style="margin-right: 7px;" id="Recommended"></i>Recommended</h4>
             <div class="row">
-            <div class="col-sm-3">
-                <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://www.ethstakeguide.info/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="https://www.ethstakeguide.info/">
-                    <div class="xe-comment-entry">
-                        <a class="xe-user-img">
-                            <img data-src="/assets/images/logos/ethstakeguide-logo.png" class="lozad img-circle" width="40">
-                        </a>
-                        <div class="xe-comment">
-                            <a href="#" class="xe-user-name overflowClip_1">
-                                <strong>Google</strong>
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://www.ethstakeguide.info/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="https://www.ethstakeguide.info/">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img data-src="/assets/images/logos/ethstakeguide-logo" class="lozad img-circle" width="40">
                             </a>
-                            <p class="overflowClip_2">📚 Learn Ethereum the smart way. Simple, fast, and beginner-friendly — powered by the Feynman Technique!</p>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>Google</strong>
+                                </a>
+                                <p class="overflowClip_2">📚 想学以太坊？用费曼学习法，快速上手，轻松掌握！</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
                 <div class="col-sm-3">
                     <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://www.youtube.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="https://www.youtube.com/">
                         <div class="xe-comment-entry">
@@ -2076,17 +2139,6 @@
             </footer>
         </div>
     </div>
-    <div id="footer-placeholder"></div>
-    <script>
-      // 动态加载header和footer
-      function loadFragment(id, url) {
-        fetch(url).then(r => r.text()).then(html => {
-          document.getElementById(id).innerHTML = html;
-        });
-      }
-      loadFragment('header-placeholder', 'header.html');
-      loadFragment('footer-placeholder', 'footer.html');
-    </script>
     
     <!-- Smooth Anchor Scrolling -->
     <script type="text/javascript">
@@ -2174,7 +2226,6 @@
     <!-- JavaScripts initializations and stuff -->
     <script src="/assets/js/xenon-custom.js"></script>
     <script src="/assets/js/lozad.js"></script>
-    <script src="/assets/js/main.min.js"></script>
 </body>
 
 </html>

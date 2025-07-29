@@ -30,27 +30,15 @@
     <title>WebHub - Explore o Melhor do Mundo, Descubra Possibilidades Infinitas</title>
     <meta name="keywords" content="diretório de finanças, sites de investimento, ferramentas para traders, mercado de ações, criptomoedas, diretório de esportes, placar ao vivo, assistir esportes online, notícias de futebol, NBA, Brasileirão, portal de games, guias de jogos, comunidade gamer, Steam, PlayStation, Xbox, apps de mensagens, ferramentas de colaboração, trabalho remoto, ferramentas de IA, inteligência artificial, gerador de arte IA, ChatGPT em português, plataformas de streaming, assistir séries e filmes, Netflix, Max, Spotify">
     <meta name="description" content="WebHub - Seu diretório com as melhores plataformas de finanças, esportes, games, comunicação, IA e entretenimento. Atualizado regularmente com links e recursos de alta qualidade.">
-    <!-- Open Graph -->
-    <meta property="og:title" content="WebHub - Explore o Melhor do Mundo, Descubra Possibilidades Infinitas" />
-    <meta property="og:description" content="WebHub - Seu diretório com as melhores plataformas de finanças, esportes, games, comunicação, IA e entretenimento. Atualizado regularmente com links e recursos de alta qualidade." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.webawesome.cc/pt/index.html" />
-    <meta property="og:image" content="https://www.webawesome.cc/assets/images/logo@2x.png" />
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="WebHub - Explore o Melhor do Mundo, Descubra Possibilidades Infinitas" />
-    <meta name="twitter:description" content="WebHub - Seu diretório com as melhores plataformas de finanças, esportes, games, comunicação, IA e entretenimento. Atualizado regularmente com links e recursos de alta qualidade." />
-    <meta name="twitter:image" content="https://www.webawesome.cc/assets/images/logo@2x.png" />
-    <!-- hreflang 多语言声明 -->
-    <link rel="alternate" hreflang="en" href="https://www.webawesome.cc/en/index.html" />
-    <link rel="alternate" hreflang="zh" href="https://www.webawesome.cc/cn/index.html" />
-    <link rel="alternate" hreflang="es" href="https://www.webawesome.cc/es/index.html" />
-    <link rel="alternate" hreflang="pt" href="https://www.webawesome.cc/pt/index.html" />
     <link rel="shortcut icon" href="/assets/images/favicon.png">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Arimo:400,700,400italic">
     <link rel="stylesheet" href="/assets/css/fonts/linecons/css/linecons.css">
     <link rel="stylesheet" href="/assets/css/fonts/fontawesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/assets/css/main.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/css/xenon-core.css">
+    <link rel="stylesheet" href="/assets/css/xenon-components.css">
+    <link rel="stylesheet" href="/assets/css/xenon-skins.css">
+    <link rel="stylesheet" href="/assets/css/nav.css">
     <script src="/assets/js/jquery-1.11.1.min.js"></script>
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -59,15 +47,90 @@
 </head>
 
 <body class="page-body">
-    <div id="header-placeholder"></div>
-    <div class="main-content">
-        <nav class="navbar user-info-navbar" role="navigation">
-            <ul class="user-info-menu left-links list-inline list-unstyled">
-                <li class="hidden-sm hidden-xs">
-                    <a href="#" data-toggle="sidebar">
-                        <i class="fa-bars"></i>
-                    </a>
-                </li>
+    <!-- skin-white -->
+    <div class="page-container">
+        <div class="sidebar-menu toggle-others fixed">
+            <div class="sidebar-menu-inner">
+                <header class="logo-env">
+                    <!-- logo -->
+                    <div class="logo">
+                        <a href="" class="logo-expanded">
+                            <img src="/assets/images/logo@2x.png" width="100%" alt="Logo do WebHub" />
+                        </a>
+                        <a href="" class="logo-collapsed">
+                            <img src="/assets/images/logo-collapsed@2x.png" width="40" alt="Logo do WebHub" />
+                        </a>
+                    </div>
+                    <div class="mobile-menu-toggle visible-xs">
+                        <a href="#" data-toggle="user-info-menu">
+                            <i class="linecons-cog"></i>
+                        </a>
+                        <a href="#" data-toggle="mobile-menu">
+                            <i class="fa-bars"></i>
+                        </a>
+                    </div>
+                </header>
+                <ul id="main-menu" class="main-menu">
+                    <li>
+                        <a href="#Recomendados" class="smooth">
+                            <i class="linecons-star"></i>
+                            <span class="title">Recomendados</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#PlataformasDeGames" class="smooth">
+                            <i class="fa-gamepad"></i>
+                            <span class="title">Plataformas de Games</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#PlataformasDeComunicacao" class="smooth">
+                            <i class="linecons-comment"></i>
+                            <span class="title">Plataformas de Comunicação</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#PlataformasDeFinancas" class="smooth">
+                            <i class="linecons-money"></i>
+                            <span class="title">Plataformas de Finanças</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#PlataformasDeEsportes" class="smooth">
+                            <i class="linecons-cup"></i>
+                            <span class="title">Plataformas de Esportes</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#PlataformasDeIA" class="smooth">
+                            <i class="linecons-lightbulb"></i>
+                            <span class="title">Plataformas de IA</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#PlataformasDeEntretenimento" class="smooth">
+                            <i class="linecons-videocam"></i>
+                            <span class="title">Plataformas de Entretenimento</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="about.html">
+                            <i class="linecons-heart"></i>
+                            <span class="tooltip-blue">Sobre Nós</span>
+                            <span class="label label-Primary pull-right hidden-collapsed">♥︎</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-content">
+            <nav class="navbar user-info-navbar" role="navigation">
+                <ul class="user-info-menu left-links list-inline list-unstyled">
+                    <li class="hidden-sm hidden-xs">
+                        <a href="#" data-toggle="sidebar">
+                            <i class="fa-bars"></i>
+                        </a>
+                    </li>
 <li class="dropdown hover-line language-switcher">
     <!-- 1. 顶部显示当前语言：葡萄牙语 -->
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -105,21 +168,21 @@
             <!-- Recomendados -->
             <h4 class="text-gray"><i class="linecons-tag" style="margin-right: 7px;" id="Recomendados"></i>Recomendados</h4>
             <div class="row">
-            <div class="col-sm-3">
-                <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://www.ethstakeguide.info/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="https://www.ethstakeguide.info/">
-                    <div class="xe-comment-entry">
-                        <a class="xe-user-img">
-                            <img data-src="/assets/images/logos/ethstakeguide-logo.png" class="lozad img-circle" width="40">
-                        </a>
-                        <div class="xe-comment">
-                            <a href="#" class="xe-user-name overflowClip_1">
-                                <strong>Google</strong>
+                <div class="col-sm-3">
+                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://www.ethstakeguide.info/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="https://www.ethstakeguide.info/">
+                        <div class="xe-comment-entry">
+                            <a class="xe-user-img">
+                                <img data-src="/assets/images/logos/ethstakeguide-logo" class="lozad img-circle" width="40">
                             </a>
-                            <p class="overflowClip_2">📚 ¿Quieres aprender Ethereum? Con la Técnica de Feynman, es fácil, rápido y claro para principiantes.</p>
+                            <div class="xe-comment">
+                                <a href="#" class="xe-user-name overflowClip_1">
+                                    <strong>Ethstakeguide</strong>
+                                </a>
+                                <p class="overflowClip_2">📚 想学以太坊？用费曼学习法，快速上手，轻松掌握！</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
                 <div class="col-sm-3">
                     <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://www.youtube.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="https://www.youtube.com/">
                         <div class="xe-comment-entry">
@@ -2070,19 +2133,87 @@
     </div>
     
     <!-- Scripts -->
-    <script src="/assets/js/main.min.js"></script>
-    <script src="/assets/js/lozad.js"></script>
-    <div id="footer-placeholder"></div>
-    <script>
-      // 动态加载header和footer
-      function loadFragment(id, url) {
-        fetch(url).then(r => r.text()).then(html => {
-          document.getElementById(id).innerHTML = html;
+    <script type="text/javascript">
+     $(document).ready(function() {
+         // Lazy loading de imagens
+         const observer = lozad();
+         observer.observe();
+
+         // Lógica de expansão do menu
+         $(document).on('click', '.has-sub', function(){
+            var _this = $(this)
+            if(!$(this).hasClass('expanded')) {
+               setTimeout(function(){
+                    _this.find('ul').attr("style","")
+               }, 300);
+            } else {
+                $('.has-sub ul').each(function(id,ele){
+                    var _that = $(this)
+                    if(_this.find('ul')[0] != ele) {
+                        setTimeout(function(){
+                            _that.attr("style","")
+                        }, 300);
+                    }
+                })
+            }
         });
+        $('.user-info-menu .hidden-sm').click(function(){
+            if($('.sidebar-menu').hasClass('collapsed')) {
+                $('.has-sub.expanded > ul').attr("style","")
+            } else {
+                $('.has-sub.expanded > ul').show()
+            }
+        });
+         $("#main-menu li ul li").click(function() {
+             $(this).siblings('li').removeClass('active');
+             $(this).addClass('active');
+         });
+         $("a.smooth").click(function(ev) {
+             ev.preventDefault();
+
+             public_vars.$mainMenu.add(public_vars.$sidebarProfile).toggleClass('mobile-is-visible');
+             // ps_destroy(); // Esta função pode não ser necessária ou definida
+             $("html, body").animate({
+                 scrollTop: $($(this).attr("href")).offset().top - 30
+             }, {
+                 duration: 500,
+                 easing: "swing"
+             });
+         });
+     });
+
+    // Lógica para ativar o item do menu principal ao rolar
+    $("a.smooth").click(function(e) {
+        $("#main-menu > li").each(function() {
+            $(this).removeClass("active");
+        });
+        $(this).closest("li").addClass("active");
+    });
+
+    // Gerador dinâmico de link de contato para evitar spam
+    document.addEventListener("DOMContentLoaded", function() {
+      var placeholder = document.getElementById("contact-link-placeholder");
+      if (placeholder) {
+        var user = "diya549527";
+        var domain = "gmail.com";
+        var subject = "Contato a partir do site WebHub";
+        var contactLink = document.createElement("a");
+        contactLink.href = "mailto:" + user + "@" + domain + "?subject=" + encodeURIComponent(subject);
+        contactLink.textContent = "Contato";
+        placeholder.appendChild(contactLink);
       }
-      loadFragment('header-placeholder', 'header.html');
-      loadFragment('footer-placeholder', 'footer.html');
+    });
     </script>
+    
+    <!-- Scripts Adicionais -->
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/TweenMax.min.js"></script>
+    <script src="/assets/js/resizeable.js"></script>
+    <script src="/assets/js/joinable.js"></script>
+    <script src="/assets/js/xenon-api.js"></script>
+    <script src="/assets/js/xenon-toggles.js"></script>
+    <script src="/assets/js/xenon-custom.js"></script>
+    <script src="/assets/js/lozad.js"></script>
 </body>
 
 </html>

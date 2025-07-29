@@ -168,13 +168,6 @@
     };
   }
 
-  // 自动初始化 lozad 懒加载
-  if (typeof lozad === 'function') {
-    document.addEventListener('DOMContentLoaded', function() {
-      lozad('.lozad').observe();
-    });
-  }
-
   return lozad;
 
 }));
